@@ -26,6 +26,10 @@ hs_err_pid*
 ### Visual Studio Code ###
 .vscode
 
+### Intellij ###
+.idea
+**/*.iml
+
 ### STS ###
 .apt_generated
 .classpath
