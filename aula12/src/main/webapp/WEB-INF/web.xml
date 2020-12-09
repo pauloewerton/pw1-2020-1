@@ -1,0 +1,39 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Aula 11 - Struts</display-name>
+  
+  <filter>
+    <filter-name>ConnectionFilter</filter-name>
+    <filter-class>br.edu.ifpb.ConnectionFilter</filter-class>
+    <init-param>
+      <param-name>url</param-name>
+      <param-value>jdbc:postgresql://localhost:5432/agenda</param-value>
+    </init-param>
+    <init-param>
+      <param-name>username</param-name>
+      <param-value>pauloewerton</param-value>
+    </init-param>
+    <init-param>
+      <param-name>password</param-name>
+      <param-value></param-value>
+    </init-param>
+  </filter>
+
+  <filter>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>ConnectionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+</web-app>
